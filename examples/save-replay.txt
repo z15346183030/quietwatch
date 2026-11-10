@@ -1,0 +1,21 @@
+# 一次编辑器保存：写临时文件 → 重写目标 → 删临时文件 → 改目录时间戳
+# 四个文件系统动作，只有目标文件的内容变化应该算数
+save src/app.py "print('hello')"
+wait 0.30
+
+# 只改时间戳，内容一个字节都没变
+touch src/app.py "print('hello')"
+wait 0.30
+
+# 真正改了内容
+write src/app.py "print('world')"
+wait 0.30
+
+# 改完又改回去：窗口内净变化为零，不该触发
+write src/app.py "print('back')"
+write src/app.py "print('world')"
+wait 0.30
+
+# 删除文件
+delete src/app.py
+wait 0.30

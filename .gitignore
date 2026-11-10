@@ -1,0 +1,54 @@
+# 依赖与虚拟环境
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# 构建产物
+target/
+bin/
+*.exe
+*.o
+*.so
+*.dylib
+*.dll
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# 临时文件
+*.log
+tmp/
+.cache/
+_staging/
+
+# 运行中间产物
+*.tmp
+*_staging/
+
+# 密钥与敏感配置（2026-10-21 补充：公开仓库防泄露）
+.env
+.env.*
+*.env
+secrets.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+.gh-token
